@@ -10,14 +10,14 @@ describe("negocio/formatadores/lance", () => {
 
       expect(maiorLance).toBe(200); // O maior lance é 200
     });
-  });
 
-  it("Deve retornar o valor inicial se não houver lances", () => {
-    const lances = [];
-    const valorInicial = 1000;
+    it("Deve retornar o valor inicial se não houver lances", () => {
+      const lances = [];
+      const valorInicial = 1000;
 
-    const maiorLance = formataMaiorLanceDoLeilao(lances, valorInicial);
+      const maiorLance = formataMaiorLanceDoLeilao(lances, valorInicial);
 
-    expect(maiorLance).toBe(1000); // Não há lances, deve retornar o valor inicial
+      expect(maiorLance).toBe(1000); // Não há lances, deve retornar o valor inicial
+    });
   });
 });
