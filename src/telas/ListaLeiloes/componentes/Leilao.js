@@ -1,18 +1,18 @@
-import React from 'react';
-import { useNavigation } from '@react-navigation/native';
+import React from "react";
+import { useNavigation } from "@react-navigation/native";
 
-import { View, TouchableOpacity, Text, StyleSheet } from 'react-native';
-import Icone from '../../../componentes/Icone';
-import Cartao from '../../../componentes/Cartao';
+import { View, TouchableOpacity, Text, StyleSheet } from "react-native";
+import Icone from "../../../componentes/Icone";
+import Cartao from "../../../componentes/Cartao";
 
-import { formataDecimalParaReal } from '../../../negocio/formatadores/moeda';
+import { formataDecimalParaReal } from "../../../negocio/formatadores/moeda";
 
 export default function Leilao({ id, nome, valorInicial, icone, cor }) {
   const navigation = useNavigation();
 
   return (
-    <Cartao 
-      onPress={() => navigation.navigate('Leilao', { id })}
+    <Cartao
+      onPress={() => navigation.navigate("Leilao", { id })}
       style={estilos.cartao}
       Componente={TouchableOpacity}
     >
@@ -21,7 +21,9 @@ export default function Leilao({ id, nome, valorInicial, icone, cor }) {
         <Text style={estilos.nome}>{nome}</Text>
         <View style={estilos.valor}>
           <Text style={estilos.legendaLance}>Valor Inicial</Text>
-          <Text style={estilos.valorLance}>{formataDecimalParaReal(valorInicial)}</Text>
+          <Text style={estilos.valorLance}>
+            {formataDecimalParaReal(valorInicial)}
+          </Text>
         </View>
       </View>
     </Cartao>
@@ -40,24 +42,24 @@ const estilos = StyleSheet.create({
   info: {
     padding: 8,
 
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'flex-end',
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "flex-end",
   },
   nome: {
     fontSize: 18,
-    color: '#4A4A4A',
+    color: "#4A4A4A",
   },
   valor: {
-    alignItems: 'flex-end',
+    alignItems: "flex-end",
   },
   legendaLance: {
     fontSize: 14,
-    color: '#4A4A4A',
+    color: "#4A4A4A",
   },
   valorLance: {
     fontSize: 18,
-    fontWeight: 'bold',
-    color: '#4A4A4A',
-  }
+    fontWeight: "bold",
+    color: "#4A4A4A",
+  },
 });
